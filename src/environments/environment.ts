@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  SPOON_API_KEY: 'ca34b00a89ab4f968c0c3b3308b2c127',
+  SPOON_API_URL: 'https://api.spoonacular.com/recipes/',
+  REST_API_URL: 'https://recipe-app-massi.herokuapp.com/api',
 };
 
 /*
