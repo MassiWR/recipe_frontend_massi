@@ -40,7 +40,7 @@ export class AuthService {
     });
   }
 
-  getToke() {
+  getToken() {
     return localStorage.getItem('access_token');
   }
 
@@ -63,7 +63,6 @@ export class AuthService {
     let api = `${this.endpoint}/user-profile`;
     return this.http.get(api, {headers: this.headers});
   }
-
 
   handleError(error: HttpErrorResponse) {
     let msg = '';
