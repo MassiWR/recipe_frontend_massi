@@ -23,9 +23,9 @@ export class RecipeService {
     return this.http.get(`${this.SPOON_RECIPE_URL}${recipe_id}/information?apiKey=${this.SPOON_API_KEY}`);
   }
 
-  getAll(dishTypes: string, diets: string):Observable<any> {
-    return this.http.get<any>
-    (`${this.RANDOM_SPOON_URL}${dishTypes ? `&tags=` + dishTypes : ""}${diets ? `?tags=` + diets: ""}`);
+  getAll(dishTypes: string, diets: string): Observable<any> {
+  return this.http.get<any>
+  (`${this.RANDOM_SPOON_URL}${dishTypes ? `&tags=` + dishTypes : ""}${diets ? `?tags=` + diets: ""}`);
   }
 
   addToList(recipe_id: number, photo: any, user_list_id: number, title: string):Observable<any> {
