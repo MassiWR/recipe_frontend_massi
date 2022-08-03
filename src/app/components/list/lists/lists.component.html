@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <div class="card">
+    <form class="form-list m-4" [formGroup]="addListForm" (ngSubmit)="createList()">
+      <div>
+        <p>Create a new list!</p>
+        <input class="form-control" placeholder="List title" type="text" formControlName="title" required>
+        <div *ngIf="addListForm.hasError('pattern', 'title')">
+          No special character allowed
+        </div>
+
+        <button type="submit" class="btn btn-success mt-2">
+          Create list
+        </button>
+      </div>
+      <p class="mt-2">{{message}}</p>
+    </form>
+
+
+
+    <div class="container dropdown mt-2 mb-4">
+      <button class="btn btn-success dropdown-toggle m-2" type="button" id="dropdownMenuButton1"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        My lists
+      </button>
+
+      <button routerLink="/edit" class="btn btn-secondary">Edit lists</button>
+      <ul class="dropdown-menu">
+        <li class="dropdown-item" *ngFor="let list of lists ">
+          <button class="btn" (click)="getList(list.id)">{{list.title}}</button>
+        </li>
+      </ul>
+      <p class="m-2">{{deleteMessage}}</p>
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-lg-4 mt-4" *ngFor="let recipe of recipes">
+            <div class="card">
+              <img src="{{recipe.photo}}" class="card-img-top" alt="Card image cap" />
+              <div class="card-body">
+                <h6 class="card-title">{{recipe.title}}</h6>
+                <button class="btn btn-primary" routerLink="../recipe-detail/{{recipe.recipe_id}}">See recipe</button>
+                <button (click)="deleteRecipe(recipe.id)" class="btn btn-danger m-4">Remove from list</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
