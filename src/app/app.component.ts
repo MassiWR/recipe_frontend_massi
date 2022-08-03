@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/authService/auth.service';
+import { RecipeService } from './services/recipeService/recipe.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,7 @@ import { AuthService } from './services/authService/auth.service';
 export class AppComponent {
   title = 'recipeAPP';
 
-  constructor(public authService: AuthService) {}
-
+  constructor(public authService: AuthService, private recipeService: RecipeService) {}
   logout() {
     this.authService.doLogout();
   }
