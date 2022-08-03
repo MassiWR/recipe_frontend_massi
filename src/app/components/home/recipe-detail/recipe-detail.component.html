@@ -1,0 +1,27 @@
+<div class="container mt-2 mb-2">
+  <div class="card col-sm">
+    <h3 class="card-title m-3">{{recipe.title}}</h3>
+    <p class="card-body"> Serving for {{recipe.servings}}, Ready in {{recipe.readyInMinutes}} minutes!
+      <img src="{{recipe.image}}" class="img img-fluid" alt="Card image cap">
+    </p>
+    <div class="card-body dropdown mt-2 mb-4">
+      <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Add to list
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li class="dropdown-item" *ngFor="let list of lists"
+          (click)="addToList(recipe.id, recipe.image, list.id, recipe.title) ">{{ list.title }}</li>
+      </ul>
+      <div class="mt-2" *ngIf="message">{{message}}</div>
+    </div>
+    <h5 class="card-body">Instructions</h5>
+    <p class="card-body" [innerHTML]="recipe.instructions"></p>
+    <h5 class="card-body">Ingredients:</h5>
+    <div class="" *ngFor="let ingredients of extendedIngridients">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ingredients}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

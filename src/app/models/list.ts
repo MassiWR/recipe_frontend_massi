@@ -1,4 +1,4 @@
 export interface List {
-  id: Number;
-  title: String;
+  id: number;
+  title: string;
 }

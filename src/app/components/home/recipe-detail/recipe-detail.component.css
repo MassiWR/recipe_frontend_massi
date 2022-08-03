@@ -1,0 +1,10 @@
+.img {
+  display: flex;
+  height: 200px;
+  width: 300px;
+}
+
+.dropdown-menu {
+  max-height: 280px;
+  overflow-y: auto;
+}

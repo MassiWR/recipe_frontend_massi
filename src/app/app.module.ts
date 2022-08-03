@@ -9,6 +9,9 @@ import { AuthInterceptor } from './services/authService/authconfig.interceptor';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { HomeComponent } from './components/home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RecipeDetailComponent } from './components/home/recipe-detail/recipe-detail.component';
+
 
 
 @NgModule({
@@ -18,6 +21,8 @@ import { HomeComponent } from './components/home/home.component';
     SignupComponent,
     UserProfileComponent,
     HomeComponent,
+    RecipeDetailComponent
+
 
   ],
   imports: [
@@ -25,7 +30,9 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbModule
+
   ],
   providers: [
     {

@@ -1,6 +1,6 @@
 export interface Recipe {
-  title: String;
-  image: String;
-  recipe_id: Number;
-  user_list_id: Number;
+  title: string;
+  image: string;
+  recipe_id: number;
+  user_list_id: number;
 }
