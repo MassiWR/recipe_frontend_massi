@@ -1,3 +1,26 @@
-<h3>App component</h3>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" ngbDropdown display="dynamic">
+  <div class="container-fluid">
+    <a routerLink="" class="navbar-brand">RecepeApp</a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav">
+        <a routerLink="" class="nav-item nav-link active">Home</a>
+        <a *ngIf="this.authService.isLoggedIn" routerLink="user-profile" class="nav-item nav-link">Profile</a>
+        <a *ngIf="this.authService.isLoggedIn" routerLink="lists" class="nav-item nav-link">My lists</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" routerLink="/sign-in"
+          class="nav-item nav-link">Login</a>
+        <a *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" routerLink="sign-up"
+          class="nav-item nav-link">Sign up</a>
+        <button (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button"
+          class="btn btn-danger">Logout</button>
+      </div>
+
+    </div>
+  </div>
+</nav>
 <router-outlet></router-outlet>
 
