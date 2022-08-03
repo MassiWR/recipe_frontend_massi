@@ -22,9 +22,11 @@ export class AuthService {
   signUp(user: User): Observable<any> {
     let api = `${this.endpoint}/register`;
     let post = this.http.post<any>(api, user).pipe(catchError(this.handleError));
-    this.router.navigate(['sign-in']);
+    //this.router.navigate(['sign-in']);
     return post;
   }
+
+
 
 
   // sign in user

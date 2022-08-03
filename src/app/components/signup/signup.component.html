@@ -1,1 +1,15 @@
-<p>signup works!</p>
+<div class="container">
+  <form class="form-signin" [formGroup]="signupForm" (ngSubmit)="registerUser()">
+    <h3 class="h3 mb-3 font-weight-normal text-center">Sign up</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" formControlName="name" placeholder="Name" required />
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" formControlName="email" placeholder="Email" required />
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" formControlName="password" placeholder="Password" required />
+    </div>
+    <button type="submit" class="btn btn-block btn-primary">Sign up</button>
+  </form>
+</div>
