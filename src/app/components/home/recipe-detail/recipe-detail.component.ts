@@ -29,37 +29,26 @@ export class RecipeDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    console.log(this.id);
     this.recipeService.getRecipeById(this.id).subscribe((recipe_data: any) => {
       this.recipe = recipe_data;
-      console.log(this.recipe);
-      console.log(recipe_data.extendedIngredients);
       recipe_data.extendedIngredients.forEach((element: any) => {
         this.extendedIngridients.push(element.original);
-        console.log(this.extendedIngridients);
       });
 
     });
 
     this.authService.getUserProfile().subscribe((data: any) => {
-      console.log(data.id);
       this.user_id = data.id;
       this.listService.getAllLists(this.user_id).subscribe((data) => {
       this.lists = data;
-      console.log(data);
     });
     });
 
   }
 
-
-
   addToList(recipe_id: number, photo: any, user_list_id: number, title: string): void {
     this.recipeService.addToList(recipe_id, photo, user_list_id, title).subscribe((data) => {
-      console.log(data);
       this.message = data.message;
-      console.log(this.message);
-
     });
   }
 

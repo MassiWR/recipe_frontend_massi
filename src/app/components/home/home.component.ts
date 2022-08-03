@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit {
       } else {
         this.isLoading = false;
         this.isEmpty = false;
-        console.log(this.recipes);
       }
     });
   }
@@ -46,13 +45,10 @@ export class HomeComponent implements OnInit {
         if(this.recipes.length === 0) {
           this.isEmpty = true;
           this.isLoading = false;
-          console.log(this.recipes.length);
           return;
         }
         this.isLoading = false;
         this.isEmpty = false;
-        console.log(this.recipes);
-
     });
   }
 
