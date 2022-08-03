@@ -13,6 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RecipeDetailComponent } from './components/home/recipe-detail/recipe-detail.component';
 import { ListsComponent } from './components/list/lists.component';
 import { ListDetailComponent } from './components/list/list-detail/list-detail.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
 
 
 
@@ -28,6 +30,8 @@ import { ListDetailComponent } from './components/list/list-detail/list-detail.c
     RecipeDetailComponent,
     ListsComponent,
     ListDetailComponent,
+    PageNotFoundComponent
+
 
 
 
