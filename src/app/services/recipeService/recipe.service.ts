@@ -14,7 +14,7 @@ export class RecipeService {
   SPOON_RECIPE_URL = environment.API_SPOON_URL;
 
   // get 20 random recipes based on user preference
-  private RANDOM_SPOON_URL = environment.RANDOM_SPOON_URL;
+  RANDOM_SPOON_URL = environment.RANDOM_SPOON_URL;
   private SPOON_API_KEY = environment.SPOON_API_KEY;
 
   constructor(private http: HttpClient) {}
