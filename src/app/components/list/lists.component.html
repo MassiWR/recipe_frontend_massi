@@ -23,7 +23,7 @@
         My lists
       </button>
 
-      <button routerLink="/edit" class="btn btn-secondary">Edit lists</button>
+      <button routerLink="/list-detail" class="btn btn-secondary">Edit lists</button>
       <ul class="dropdown-menu">
         <li class="dropdown-item" *ngFor="let list of lists ">
           <button class="btn" (click)="getList(list.id)">{{list.title}}</button>

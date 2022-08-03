@@ -1,0 +1,33 @@
+<div class="container dropdown mt-4 mb-4">
+  <div>
+    <h4 class="text">Pick a list to edit</h4>
+  </div>
+  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+    aria-expanded="false">
+    Edit lists
+  </button>
+  <ul class="dropdown-menu">
+    <li class="dropdown-item" *ngFor="let list of lists">
+      <a (click)="updateList(list.id)">{{list.title}}</a>
+      <a target="_self" class="btn btn-danger m-2" (click)="deleteList(list.id)">X</a>
+      <a target="_self" class="btn btn-dark m-2" (click)="onUpdate(list.id)">Update</a>
+    </li>
+  </ul>
+  <p class="mt-2">{{deleteMessage}}</p>
+  <div *ngIf="update">
+    <form class="form-list mt-4" [formGroup]="updateListForm" (ngSubmit)="updateList(list_id)">
+      <div>
+        <p>Update list!</p>
+        <input class="form-control" placeholder="List title" type="text" formControlName="title" required>
+        <div *ngIf="updateListForm.hasError('pattern', 'listTitle')">
+          No special character allowed
+        </div>
+
+        <button type="submit" class="btn btn-success mt-2">
+          Update list
+        </button>
+      </div>
+      <h5>{{updateMessage}}</h5>
+    </form>
+  </div>
+</div>

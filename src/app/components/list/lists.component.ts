@@ -11,8 +11,8 @@ import { AuthService } from 'src/app/services/authService/auth.service';
 
 @Component({
   selector: 'app-lists',
-  templateUrl: './lists.component.html',
-  styleUrls: ['./lists.component.css']
+  templateUrl: 'lists.component.html',
+  styleUrls: ['lists.component.css']
 })
 export class ListsComponent implements OnInit {
 
@@ -49,13 +49,9 @@ export class ListsComponent implements OnInit {
 
     this.authService.getUserProfile().subscribe((user) => {
       this.user_id = user.id;
-      console.log(this.user_id);
       this.listService.getAllLists(this.user_id).subscribe((list) => {
-      console.log(list);
       this.lists = list;
       this.recipeService.getRecipesFromList(this.list_id).subscribe((recipe) => {
-        console.log(this.user_id);
-        console.log(recipe);
       })
     });
     });
@@ -72,9 +68,6 @@ export class ListsComponent implements OnInit {
       .subscribe(
         (data) => {
           this.message = data.message;
-          console.log(this.message);
-
-          console.log(this.formSubscription);
           this.formSubscription.unsubscribe();
           this.ngOnInit();
         }
@@ -83,23 +76,18 @@ export class ListsComponent implements OnInit {
 
 getList(id: number): void {
   this.listService.getOneList(id).subscribe((list_id) => {
-    console.log(list_id[0].id);
     this.list_id = list_id[0].id;
 
     this.recipeService.getRecipesFromList(this.list_id).subscribe((recipes: any) => {
-      console.log(this.list_id);
       this.recipes = recipes;
-      console.log(this.recipes);
     });
   });
 }
 
 deleteRecipe(id: number): void {
   this.recipeService.deleteRecipeFromList(id).subscribe((data) => {
-    console.log(data);
     this.deleteMessage = data.message;
     this.ngOnInit();
   })
 }
-
 }

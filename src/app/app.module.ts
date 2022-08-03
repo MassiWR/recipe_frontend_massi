@@ -11,7 +11,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RecipeDetailComponent } from './components/home/recipe-detail/recipe-detail.component';
-import { ListsComponent } from './components/list/lists/lists.component';
+import { ListsComponent } from './components/list/lists.component';
+import { ListDetailComponent } from './components/list/list-detail/list-detail.component';
+
 
 
 
@@ -24,7 +26,9 @@ import { ListsComponent } from './components/list/lists/lists.component';
     UserProfileComponent,
     HomeComponent,
     RecipeDetailComponent,
-    ListsComponent
+    ListsComponent,
+    ListDetailComponent,
+
 
 
   ],
