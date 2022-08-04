@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'sign-up', component: SignupComponent},
   {path: 'sign-in', component: SigninComponent},
   {path: 'user-profile', component: UserProfileComponent, canActivate: [AuthGuard]},
-  {path: 'recipe-detail/:id', component: RecipeDetailComponent, canActivate: [AuthGuard]},
+  {path: 'recipe-detail/:id', component: RecipeDetailComponent},
   {path: 'lists', component: ListsComponent, canActivate: [AuthGuard]},
   {path: 'list-detail', component: ListDetailComponent, canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent}
